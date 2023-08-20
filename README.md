@@ -42,6 +42,7 @@ Many thanks to my mentor, [Ahmet Uzgor](https://github.com/ahmet-uzgor) , who ta
 I also benefited from the following trainings:
 
 [NestJs Course for Beginners - Create a REST API](https://www.youtube.com/watch?v=GHTA143_b-s&ab_channel=freeCodeCamp.org)
+
 [Crash Course, Nest.js Crash Course 2023: A Comprehensive Step-by-Step Tutorial](https://www.youtube.com/watch?v=Hv70fn8xTL4&t=75s&ab_channel=SakuraDev)
 
 ## License
