@@ -26,47 +26,23 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+New e-commerce project with Node.js Express
 
-```bash
-$ npm install
-```
+Collaborators => Alim Uçar
 
-## Running the app
+## Progress
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
+20.08.2023 - Project started, user and task modules, controllers and services created
 
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
+Many thanks to my mentor, [Ahmet Uzgor](https://github.com/ahmet-uzgor) , who taught me Nest and guided me while developing my first projects.
+I also benefited from the following trainings:
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+[NestJs Course for Beginners - Create a REST API](https://www.youtube.com/watch?v=GHTA143_b-s&ab_channel=freeCodeCamp.org)
+[Crash Course, Nest.js Crash Course 2023: A Comprehensive Step-by-Step Tutorial](https://www.youtube.com/watch?v=Hv70fn8xTL4&t=75s&ab_channel=SakuraDev)
 
 ## License
 
