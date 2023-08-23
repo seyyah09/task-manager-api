@@ -26,13 +26,12 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-New e-commerce project with Node.js Express
-
-Collaborators => Alim Uçar
+New Task Manager Project with Nest
 
 ## Progress
 
 20.08.2023 - Project started, user and task modules, controllers and services created
+23.08.2023 - bcrypt library added, typeORM integrated, DB models for user and task created, docker set up, adminer integrated
 
 ## Support
 
