@@ -34,6 +34,10 @@ New Task Manager Project with Nest
 
 23.08.2023 - bcrypt library added, typeORM integrated, DB models for user and task created, docker set up, adminer integrated
 
+25.08.2023 - db-typeORM functions
+
+02.09.2023 - authentication with passport & jwt integrated; register and login endpoints and functions created
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
