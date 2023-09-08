@@ -26,13 +26,17 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-New e-commerce project with Node.js Express
-
-Collaborators => Alim Uçar
+New Task Manager Project with Nest
 
 ## Progress
 
 20.08.2023 - Project started, user and task modules, controllers and services created
+
+23.08.2023 - bcrypt library added, typeORM integrated, DB models for user and task created, docker set up, adminer integrated
+
+25.08.2023 - db-typeORM functions
+
+02.09.2023 - authentication with passport & jwt integrated; register and login endpoints and functions created
 
 ## Support
 
@@ -42,6 +46,7 @@ Many thanks to my mentor, [Ahmet Uzgor](https://github.com/ahmet-uzgor) , who ta
 I also benefited from the following trainings:
 
 [NestJs Course for Beginners - Create a REST API](https://www.youtube.com/watch?v=GHTA143_b-s&ab_channel=freeCodeCamp.org)
+
 [Crash Course, Nest.js Crash Course 2023: A Comprehensive Step-by-Step Tutorial](https://www.youtube.com/watch?v=Hv70fn8xTL4&t=75s&ab_channel=SakuraDev)
 
 ## License
