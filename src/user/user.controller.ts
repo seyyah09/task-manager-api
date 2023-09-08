@@ -1,7 +1,8 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put, UseGuards } from '@nestjs/common';
 import { CreateUserDto, UpdateUserDto } from './dto/createUser-dto';
 import { UserService } from './user.service';
 import { TaskService } from 'src/task/task.service';
+import { JwtGuard } from 'src/auth/guards/jwt-auth.guard';
 
 @Controller('user')
 export class UserController {
@@ -14,13 +15,14 @@ export class UserController {
         return this.userService.findOne(id);
     };
 
+    @UseGuards(JwtGuard)
     @Get(':id/mytasks')
     getTasksForUser(@Param("id") id:string) {
         return this.taskService.findTasksForUser(id);
     };
 
     @Post()
-    async ascreateUser(@Body() dto: CreateUserDto) {
+    async createUser(@Body() dto: CreateUserDto) {
         return  {
             message: "thanks for joining us! the user created as follows:",
             user: await this.userService.create(dto)
