@@ -10,6 +10,10 @@ export class UserService {
         @InjectRepository(User) private readonly userRepo: Repository<User>,
     ) {}
 
+    matchIds(idFromToken: number, idFromParam: number): boolean {
+        return idFromToken == idFromParam ? true : false
+    }
+
     async findOne(id:number){
         return await this.userRepo.findOne({
             where: {

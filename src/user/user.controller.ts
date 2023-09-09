@@ -1,8 +1,10 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Put, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put, Request, UseGuards } from '@nestjs/common';
 import { CreateUserDto, UpdateUserDto } from './dto/createUser-dto';
 import { UserService } from './user.service';
 import { TaskService } from 'src/task/task.service';
 import { JwtGuard } from 'src/auth/guards/jwt-auth.guard';
+import { JwtService } from '@nestjs/jwt';
+import { ExtractJwt } from 'passport-jwt';
 
 @Controller('user')
 export class UserController {
@@ -16,8 +18,12 @@ export class UserController {
     };
 
     @UseGuards(JwtGuard)
-    @Get(':id/mytasks')
-    getTasksForUser(@Param("id") id:string) {
+    @Get(':id/usertasks')
+    getTasksForUser(@Request() req, @Param("id") id:number) {
+        const tokenId: number = req.user.user.userId;
+        if(!this.userService.matchIds(tokenId, id)) {
+            return `you are not allowed to see tasks of user with id: ${id}!`
+        }
         return this.taskService.findTasksForUser(id);
     };
 
