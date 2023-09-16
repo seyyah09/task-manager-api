@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { User } from "./user.entity";
 
 @Entity()
@@ -13,23 +13,20 @@ export class Task {
     description: string;
 
     @Column()
-    dueDate: string;
+    dueDate: Date;
 
     @Column()
     status: string;
 
-    @Column()
+    @CreateDateColumn()
     createdAt: Date;
-
-    @Column()
-    updatedAt: Date;
-
-    @Column()
-    completedAt: Date;
 
     @Column()
     notes: string;
 
-    @ManyToOne((type) => User, (user) => user.id)
+    @ManyToOne(() => User, (user) => user.id)
     user: User;
+
+    @Column()
+    userId: number;
 }

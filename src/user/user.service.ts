@@ -10,8 +10,22 @@ export class UserService {
         @InjectRepository(User) private readonly userRepo: Repository<User>,
     ) {}
 
-    matchIds(idFromToken: number, idFromParam: number): boolean {
-        return idFromToken == idFromParam ? true : false
+    matchIds(idFromToken: number, idGivenByUser: number): boolean {
+        return idFromToken == idGivenByUser ? true : false
+    }
+
+    async getUsers(){
+        return await this.userRepo.find({
+            select: {
+                id: true,
+                name: true,
+                email: true,
+            }
+        })
+    }
+
+    async userIdCheck(id: number) {
+        return await this.findOne(id) ? true : false;
     }
 
     async findOne(id:number){
@@ -35,5 +49,9 @@ export class UserService {
 
     async update(id: number, updateUserDto: UpdateUserDto) {
         return await this.userRepo.update(id, updateUserDto);
+    }
+
+    async delete(id: number) {
+        return await this.userRepo.delete(id);
     }
 }

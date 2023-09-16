@@ -3,6 +3,7 @@
 /node_modules
 /.vscode
 .env
+Guidelines_ChatGPT.txt
 
 # Logs
 logs

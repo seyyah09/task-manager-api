@@ -17,14 +17,11 @@ export class User {
     @Column({ nullable: false })
     password: string;
 
-    @OneToMany((type) => Task, (task) => task.user)
+    @OneToMany(() => Task, (task) => task.user)
     tasks: Task[];
 
     @BeforeInsert()
     async hashPassword() {
         this.password = await bcrypt.hash(this.password, 10)
     }
-
-
-
 }

@@ -12,19 +12,14 @@ export class UserController {
         private readonly userService: UserService,
         private readonly taskService: TaskService) {}
 
+    @Get('getallusers')
+    getUsers() {
+        return this.userService.getUsers();
+    };
+
     @Get(':id')
     findOne(@Param("id") id:number) {
         return this.userService.findOne(id);
-    };
-
-    @UseGuards(JwtGuard)
-    @Get(':id/usertasks')
-    getTasksForUser(@Request() req, @Param("id") id:number) {
-        const tokenId: number = req.user.user.userId;
-        if(!this.userService.matchIds(tokenId, id)) {
-            return `you are not allowed to see tasks of user with id: ${id}!`
-        }
-        return this.taskService.findTasksForUser(id);
     };
 
     @Post()
@@ -35,10 +30,6 @@ export class UserController {
         }
     }
     
-
-    @Patch()
-    somePatchFunction(){}
-
     @Put(':id')
     async update(@Param('id') id: number, @Body() updateUserDto: UpdateUserDto) {
         return {
@@ -46,13 +37,21 @@ export class UserController {
             result: await this.userService.update(id, updateUserDto)
         }
     }
-    
-//TODO QUESTION: 25 ve 37'deki mesajları service içinde mi vermek lazım?
-//TODO QUESTION: 25 ve 37'deki mesajlar olmasaydı 26 ve 38'deki async-await'e gerek olmuyordu, neden?
+//TODO: Later, add admin check!
+    @Delete(':id')
+    async delete(@Param('id') id: number) {
+        if(!await this.userService.userIdCheck(id)) {
+            return `no such user with id: ${id} or deleted before!`
+        }
 
-    somePutFunction(){}
+        const username: string = (await this.userService.findOne(id)).email
+        return {
+            message: `the user ${username} with id:${id} deleted!`,
+            result: await this.userService.delete(id)
+        }
+    }
 
-    @Delete()
+    // @Patch()
+    // somePatchFunction(){}
 
-    someDeleteFunction(){}
 }

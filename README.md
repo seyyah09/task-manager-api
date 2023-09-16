@@ -40,6 +40,8 @@ New Task Manager Project with Nest
 
 09.09.2023 - /id/usertasks endpoint added with related controller and service functions and authorization controls to get the tasks of the user with a given id.
 
+16.09.2023 - basic task services, endpoints and related authorization functions added. 
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
